@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Biggest Loser Calculator</title>
+    </head>
+<body>
+
+<script>
+/*
+*   Goal is to get percent of weight lost
+*   formula should be: ((startWeight - current weight) / startWeight) * 100
+
+*   Start by asking user how many participants user will be entering weight info for
+*   Use number of participants to generate that number of input fields for data entry
+*   User will input starting weight and current weight for each user
+*   Calculate button will use formular to calculate percentage lost (or gained) for each participant
+*   Reload button will reset the page
+*   Weight percentage will be displayed next to each participant
+*/
+
+let startWeight = 169.3;
+console.log(startWeight);
+
+let currentweight = 168.1;
+console.log(currentweight);
+
+let percentLost = ((startWeight - currentweight) / startWeight) * 100;
+console.log(percentLost);
+
+
+console.log('Percent of weight lost is ' + percentLost.toFixed(2));
+
+
+</script>
+
+</body>
+</html>
