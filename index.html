@@ -6,6 +6,8 @@
     </head>
 <body>
 
+    <div class="container"></div>
+
 <script>
 /*
 *   Goal is to get percent of weight lost
@@ -19,6 +21,7 @@
 *   Weight percentage will be displayed next to each participant
 */
 
+/*
 let startWeight = 169.3;
 console.log(startWeight);
 
@@ -30,7 +33,49 @@ console.log(percentLost);
 
 
 console.log('Percent of weight lost is ' + percentLost.toFixed(2));
+*/
 
+//prompt user for number of participants user will input info for
+//For each participant, populate page with proper amount of input divs
+
+let container = document.querySelector('.container');
+
+let participantNum = prompt("How many participants will you enter information for?", 0);
+
+//This function populates the page with the proper input fields
+function addParticipants(participantNum){
+    for(let i = 0; i < participantNum; i++){
+        /*let inputField = document.createElement('input');
+        //inputField.setAttribute('type','text');
+        //inputField.classList.add('inputField');
+        inputField.size = 7;
+        container.appendChild(inputField);
+
+        container.appendChild(document.createElement("br"));
+        container.appendChild(document.createElement("br"));
+        */
+        container.appendChild(document.createTextNode("Participant " + (i + 1)));
+
+        let inputField = document.createElement('input');
+        inputField.classList.add('inputField');
+        inputField.type = 'text';
+        inputField.size = 7;
+        container.appendChild(inputField);
+
+        container.appendChild(document.createElement("br"));
+        container.appendChild(document.createElement("br"));
+        /*
+        let inputDiv = document.createElement('div');
+        let inputField = document.createElement('input');
+        inputDiv.appendChild(inputField);
+        inputDiv.appendChild(inputField);
+
+        container.appendChild(inputDiv);
+        */
+    }
+}
+
+addParticipants(participantNum);
 
 </script>
 
