@@ -5,7 +5,7 @@
         <title>Biggest Loser Calculator</title>
     </head>
 <body>
-
+    <h1>Biggest Loser Calculator</h1>
     <div class="container"></div>
 
 <script>
@@ -45,35 +45,39 @@ let participantNum = prompt("How many participants will you enter information fo
 //This function populates the page with the proper input fields
 function addParticipants(participantNum){
     for(let i = 0; i < participantNum; i++){
-        /*let inputField = document.createElement('input');
-        //inputField.setAttribute('type','text');
-        //inputField.classList.add('inputField');
-        inputField.size = 7;
-        container.appendChild(inputField);
+        container.appendChild(document.createTextNode("Participant " + (i + 1) + ": "));
+
+        //Add fields for starting weight
+        let startWeight = document.createElement('input');
+        startWeight.classList.add('startWeight');
+        startWeight.type = 'text';
+        startWeight.size = 7;
+        container.appendChild(startWeight);
+
+        container.appendChild(document.createTextNode(" "));
+
+        //Add fields for current weight
+        let currentWeight = document.createElement('input');
+        currentWeight.classList.add('currentWeight');
+        currentWeight.type = 'text';
+        currentWeight.size = 7;
+        container.appendChild(currentWeight);
+
+        container.appendChild(document.createTextNode(" "));
+
+        //Add fields for weight loss result
+        let weightLost = document.createElement('input');
+        weightLost.classList.add('weightLost');
+        weightLost.type = 'text';
+        weightLost.size = 7;
+        container.appendChild(weightLost);
 
         container.appendChild(document.createElement("br"));
         container.appendChild(document.createElement("br"));
-        */
-        container.appendChild(document.createTextNode("Participant " + (i + 1)));
-
-        let inputField = document.createElement('input');
-        inputField.classList.add('inputField');
-        inputField.type = 'text';
-        inputField.size = 7;
-        container.appendChild(inputField);
-
         container.appendChild(document.createElement("br"));
-        container.appendChild(document.createElement("br"));
-        /*
-        let inputDiv = document.createElement('div');
-        let inputField = document.createElement('input');
-        inputDiv.appendChild(inputField);
-        inputDiv.appendChild(inputField);
-
-        container.appendChild(inputDiv);
-        */
     }
 }
+//Maybe consider using a table instead for organization
 
 addParticipants(participantNum);
 
